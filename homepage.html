@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS - Rent | Homepage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="header" data-header>
+        <div class="container">
+            <a href="/" class="logo">
+                <span style="color: #2AC7AB;">WS</span>-<span style="color: #8D8D8D;">Rent</span>
+            </a>
+
+            <nav class="navbar container" data-navbar>
+                <ul class="navbar-list">
+                    <li>
+                        <a href="/" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Property List</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- <a href="/sign-up.html" class="btn btn-primary">Logout</a> -->
+            <div class="user-profile" onclick="toggleDropdown()">
+                <img src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="Profile Picture"
+                    class="profile-picture">
+                <div class="user-info">
+                    <div class="user-name">Jhon Doe</div>
+                    <div class="user-status">User</div>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#">Profile</a>
+                    <a href="#" onclick="logout()">Logout</a>
+                </div>
+            </div>
+
+            <script>
+                function toggleDropdown() {
+                    var profileDropdown = document.querySelector('.user-profile');
+                    profileDropdown.classList.toggle('active');
+                }
+
+                function logout() {
+                    // Proses logout, misalnya redirect ke halaman logout atau hapus session
+                    alert("Tombol logout ditekan");
+                }
+
+                // Tutup dropdown saat klik di luar dropdown
+                window.onclick = function (event) {
+                    if (!event.target.matches('.user-profile') && !event.target.closest('.user-profile')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        for (var i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (openDropdown.classList.contains('active')) {
+                                openDropdown.classList.remove('active');
+                            }
+                        }
+                    }
+                }
+            </script>
+
+
+            <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+                <i aria-hidden="true" class="menu-icon bx bx-grid-alt"></i>
+                <i aria-hidden="true" class="close-icon bx bx-x-circle"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <article class="article homepage">
+            <section class="section hero">
+                <h1 class="homepage-title">Holla, Jhon Due</h1>
+                <div class="homepage-body">
+                    <div class="homepage-content">
+                        <h1 class="homepage-title2">
+                            Easy way to find a perfect property
+                        </h1>
+                        <p class="homepage-text">
+                            We provide a complete service for the sale, purchase or rental of real estate.
+                        </p>
+                        <div class="hero-form-wrapper" style="margin-top: 75px; margin-left: 0;">
+                            <div class="form-tab">
+                                <button class="tab-btn active" data-tab-btn>RENT</button>
+                                <button class="tab-btn disabled" style="background: #ecf1f8;">BUY</button>
+                                <button class="tab-btn disabled" style="background: #ecf1f8;">SELL</button>
+                            </div>
+
+                            <form action="" class="hero-form homepage-form-wrapper">
+                                <div class="input-wrapper">
+                                    <label for="search" class="input-label">Lokasi <i class="bx bx-map"
+                                            style="color: #2AC7AB;"></i></label>
+                                    <input type="search" name="search" id="search" placeholder="Select Your City"
+                                        required class="input-field">
+                                </div>
+
+                                <div class="input-wrapper">
+                                    <label for="category" class="input-label">Tipe Property <i class='bx bx-calendar'
+                                            style="color: #2AC7AB;"></i></label>
+                                    <select name="category" id="category" class="input-field">
+                                        <option selected disabled>Choose Property Type</option>
+                                        <option value="apartment">Apartment</option>
+                                        <option value="office">Office</option>
+                                        <option value="land">Land</option>
+                                    </select>
+                                </div>
+
+                                <div class="input-wrapper">
+                                    <label for="price-range" class="input-label">Rentang Harga <i class='bx bx-dollar'
+                                            style="color: #2AC7AB;"></i></label>
+                                    <input type="text" name="price-range" id="price-range"
+                                        placeholder="Choose Price Range" class="input-field">
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-search"><i
+                                        class="bx bx-search"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

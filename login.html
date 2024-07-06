@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS - Rent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="login-bg">
+    <div class="row">
+        <div class="login-form-wrapper">
+            <div>
+                <h1>Sign In Here</h1>
+                <p>Securely Login to your M-rent Account</p>
+                <form action="login.php" method="POST">
+                    <div>
+                        <label for="email" class="form-label">User name</label>
+                        <input type="email" class="form-control" id="email" name="email" required
+                            placeholder="Enter your username">
+                    </div>
+                    <div>
+                        <label for="password" class="form-label">Enter your Password</label>
+                        <div class="password-container">
+                            <input type="password" class="form-control" id="password" name="password" required
+                                placeholder="Type your password here">
+                            <i class='bx bx-show toggle-password' id="togglePassword"></i>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin: 20px 0px 20px 0px;">
+                        <div style="display: flex; align-items: center;">
+                            <input type="checkbox" class="form-check-input" id="remember">
+                            <label class="form-check-label" for="remember"
+                                style="margin-left: 8px; text-wrap: nowrap;">Remember me</label>
+                        </div>
+                        <a href="#" style="text-decoration: none;">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Login</button>
+                </form>
+                <p><a href="/" style="text-align: center; color: #9CA5B2; margin-top: 20px;">Cancel</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the icon
+            this.classList.toggle('bx-show');
+            this.classList.toggle('bx-low-vision');
+        });
+    </script>
+</body>
+
+</html>

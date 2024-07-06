@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS - Rent</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="header" data-header>
+        <div class="container">
+            <a href="" class="logo">
+                <span style="color: #2AC7AB;">WS</span>-<span style="color: #8D8D8D;">Rent</span>
+            </a>
+
+            <nav class="navbar container" data-navbar>
+                <ul class="navbar-list">
+                    <li>
+                        <a href="/" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Property List</a>
+                    </li>
+                    <li class="desktop-only">
+                        <a href="/login.html" id="hide-btn" class="btn btn-outline-primary"
+                            style="margin-top: 2px;">Login</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="/sign-up.html" class="btn btn-primary">Sign up</a>
+            <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+                <i aria-hidden="true" class="menu-icon bx bx-grid-alt"></i>
+                <i aria-hidden="true" class="close-icon bx bx-x-circle"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <article class="article">
+            <section class="section hero" aria-label="hero">
+                <div>
+                    <div class="hero-bg">
+                        <div class="hero-content">
+                            <h1 class="h1 hero-title">
+                                Buy, Rent, Or sell your Property easily
+                            </h1>
+
+                            <p class="hero-text">
+                                A great platform to buy sell, or even rent your properties without any commisions
+                            </p>
+
+                            <div>
+                                <div class="stats">
+                                    <div class="stat">
+                                        <h2 class="stat-number">50k+</h2>
+                                        <p class="stat-text">renters</p>
+                                    </div>
+                                    <div class="stat">
+                                        <h2 class="stat-number">10k+</h2>
+                                        <p class="stat-text">properties</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-form-wrapper" style="text-align: left!important; margin-top: 75px;">
+                                <div class="form-tab">
+                                    <button class="tab-btn active" data-tab-btn>Rent</button>
+                                    <button class="tab-btn disabled">Buy</button>
+                                    <button class="tab-btn disabled">Sell</button>
+                                </div>
+
+                                <form action="" class="hero-form">
+                                    <div class="input-wrapper">
+                                        <label for="search" class="input-label">Location <i class="bx bx-map"
+                                                style="color: #2AC7AB;"></i></label>
+                                        <input type="search" name="search" id="search" placeholder="Kampala Uganda"
+                                            required class="input-field">
+                                    </div>
+
+                                    <div class="input-wrapper">
+                                        <label for="category" class="input-label">When <i class='bx bx-calendar'
+                                                style="color: #2AC7AB;"></i></label>
+                                        <input type="date" name="category" id="category" required class="input-field">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Browse Properties</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>
