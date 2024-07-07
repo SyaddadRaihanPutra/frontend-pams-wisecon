@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS - Rent | Homepage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@100;300;400;500;700;800;900&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <nav class="header" data-header>
+        <div class="container">
+            <a href="/" class="logo">
+                <span style="color: #2AC7AB;">WS</span>-<span style="color: #8D8D8D;">Rent</span>
+            </a>
+
+            <nav class="navbar container" data-navbar>
+                <ul class="navbar-list">
+                    <li>
+                        <a href="/" class="navbar-link" data-nav-link>Home</a>
+                    </li>
+                    <li>
+                        <a href="#" class="navbar-link" data-nav-link>Property List</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- <a href="/sign-up.html" class="btn btn-primary">Logout</a> -->
+            <div class="user-profile" onclick="toggleDropdown()">
+                <img src="https://www.svgrepo.com/show/384674/account-avatar-profile-user-11.svg" alt="Profile Picture"
+                    class="profile-picture">
+                <div class="user-info">
+                    <div class="user-name">Jhon Doe</div>
+                    <div class="user-status">User</div>
+                </div>
+                <div class="dropdown-content">
+                    <a href="#"><i class='bx bx-user'></i> Profile</a>
+                    <a href="#"><i class='bx bxs-key'></i> Change Password</a>
+                    <a href="#" onclick="logout()"><i class='bx bx-log-out-circle'></i> Logout</a>
+                </div>
+            </div>
+
+            <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
+                <i aria-hidden="true" class="menu-icon bx bx-grid-alt"></i>
+                <i aria-hidden="true" class="close-icon bx bx-x-circle"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h1 class="search-title">
+                    Search properties to rent
+                </h1>
+                <div class="search-form-wrapper">
+                    <form action="" class="search-form">
+                        <div class="input-wrapper">
+                            <label for="location" class="input-label">Lokasi <i class="bx bx-map"
+                                    style="color: #2AC7AB;"></i></label>
+                            <!-- <input type="text" class="input-field" id="location" placeholder="Jakarta"> -->
+                            <select name="location" id="location" class="select-field">
+                                <option value="jakarta">Jakarta</option>
+                                <option value="bandung">Bandung</option>
+                                <option value="surabaya">Surabaya</option>
+                                <option value="bali">Bali</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="date" class="input-label">Tanggal <i class="bx bx-calendar"
+                                    style="color: #2AC7AB;"></i></label>
+                            <input type="date" class="input-field" id="date" placeholder="Enter property type">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="price" class="input-label">Harga</label>
+                            <select name="price" id="price" class="select-field">
+                                <option value="all">All</option>
+                                <option value="1-4">Rp 1M - Rp 4M</option>
+                                <option value="5-10">Rp 5M - Rp 10M</option>
+                                <option value="10-20">Rp 10M - Rp 20M</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="tipe_properti" class="input-label">Tipe Property</label>
+                            <select name="tipe_properti" id="tipe_properti" class="select-field">
+                                <option value="all">All</option>
+                                <option value="rumah">Rumah</option>
+                                <option value="apartemen">Apartemen</option>
+                                <option value="kost">Kost</option>
+                                <option value="villa">Villa</option>
+                            </select>
+                        </div>
+                        <div class="input-wrapper">
+                            <button class="btn btn-primary" style="margin-top: 10px;">Search</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <ul class="property-list" style="margin-top: 50px;">
+                <li>
+                    <div class="property-card">
+                        <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                            <img src="images/properti-1.jpg" width="800px" height="533" loading="lazy" alt=""
+                                class="img-cover">
+                        </figure>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">Rp 1.600.000.000,00</h3>
+                                <button class="love-button">
+                                    <i class='bx bx-heart'></i>
+                                </button>
+                            </div>
+                            <p>Pondok Aren Estate</p>
+                            <p class="card-address">Jl Raya Cibedu , Pd Aren , 19219</p>
+                            <hr>
+                            <ul class="card-list">
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-bed' style="color: #2AC7AB;"></i>
+                                    </div>
+                                    <span class="item-text">4 Beds</span>
+                                </li>
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-bath' style="color: #2AC7AB;"></i>
+                                    </div>
+                                    <span class="item-text">4 Bathrooms</span>
+                                </li>
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-square-rounded'
+                                            style="color: #2AC7AB; transform: rotate(45deg); font-size: 17px;"></i>
+                                    </div>
+                                    <span class="item-text">1200 sqm</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="property-card">
+                        <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                            <img src="images/properti-1.jpg" width="800px" height="533" loading="lazy" alt=""
+                                class="img-cover">
+                        </figure>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">Rp 4.100.000.000,00</h3>
+                                <button class="love-button loved">
+                                    <i class='bx bx-heart'></i>
+                                </button>
+                            </div>
+                            <p>Cendana Putih Condet</p>
+                            <p class="card-address">Jl Ry Batu Ampar , Pasar Rebo , 13240</p>
+                            <hr>
+                            <ul class="card-list">
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-bed' style="color: #2AC7AB;"></i>
+                                    </div>
+                                    <span class="item-text">3 Beds</span>
+                                </li>
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-bath' style="color: #2AC7AB;"></i>
+                                    </div>
+                                    <span class="item-text">2 Bathrooms</span>
+                                </li>
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-square-rounded'
+                                            style="color: #2AC7AB; transform: rotate(45deg); font-size: 17px;"></i>
+                                    </div>
+                                    <span class="item-text">1100 sqm</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="property-card">
+                        <figure class="card-banner img-holder" style="--width: 800; --height: 533;">
+                            <img src="images/properti-1.jpg" width="800px" height="533" loading="lazy" alt=""
+                                class="img-cover">
+                        </figure>
+                        <div class="card-content">
+                            <div class="card-header">
+                                <h3 class="card-title">Rp 650.000.000,00</h3>
+                                <button class="love-button">
+                                    <i class='bx bx-heart'></i>
+                                </button>
+                            </div>
+                            <p>Apartemen Sherwood Twr Richmond , Kelapa gading</p>
+                            <p class="card-address">Jakarta Utara , Ancol , 112900</p>
+                            <hr>
+                            <ul class="card-list">
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-bed' style="color: #2AC7AB;"></i>
+                                    </div>
+                                    <span class="item-text">2 Beds</span>
+                                </li>
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-bath' style="color: #2AC7AB;"></i>
+                                    </div>
+                                    <span class="item-text">2 Bathrooms</span>
+                                </li>
+                                <li class="card-item">
+                                    <div class="item-icon">
+                                        <i class='bx bx-square-rounded'
+                                            style="color: #2AC7AB; transform: rotate(45deg); font-size: 17px;"></i>
+                                    </div>
+                                    <span class="item-text">800 sqm</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <script>
+                document.querySelectorAll('.property-card').forEach(card => {
+                    card.addEventListener('click', function (event) {
+                        const loveButtonClicked = event.target.closest('.love-button');
+                        if (loveButtonClicked) {
+                            event.stopPropagation();
+                            alert('Added to favourites');
+                        } else {
+                            window.location.href = '/detail-property.html';
+                        }
+                    });
+                });
+            </script>
+            <div class="pagination">
+                <a href="#" class="page-link"><i class='bx bx-chevron-left'></i></a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link"><i class='bx bx-chevron-right'></i></a>
+            </div>
+            <style>
+                .pagination {
+                    display: flex;
+                    justify-content: center;
+                    gap: 10px;
+                    margin-top: 20px;
+                }
+
+                .page-link {
+                    padding: 10px 15px;
+                    border-radius: 50%;
+                    background-color: white;
+                    color: #8D8D8D;
+                    text-decoration: none;
+                    font-weight: 800;
+                }
+
+                .page-link.active {
+                    background-color: #2AC7AB;
+                    color: white;
+                }
+            </style>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

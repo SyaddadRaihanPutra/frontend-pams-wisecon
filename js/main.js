@@ -56,3 +56,26 @@ const changeTab = function(){
 }
 
 addEventOnElement(tabBtns, "click", changeTab)
+
+function toggleDropdown() {
+    var profileDropdown = document.querySelector('.user-profile');
+    profileDropdown.classList.toggle('active');
+}
+
+function logout() {
+    // Proses logout, misalnya redirect ke halaman logout atau hapus session
+    alert("Tombol logout ditekan");
+}
+
+// Tutup dropdown saat klik di luar dropdown
+window.onclick = function (event) {
+    if (!event.target.matches('.user-profile') && !event.target.closest('.user-profile')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('active')) {
+                openDropdown.classList.remove('active');
+            }
+        }
+    }
+}

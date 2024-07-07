@@ -41,36 +41,11 @@
                     <div class="user-status">User</div>
                 </div>
                 <div class="dropdown-content">
-                    <a href="#">Profile</a>
-                    <a href="#" onclick="logout()">Logout</a>
+                    <a href="#"><i class='bx bx-user' ></i> Profile</a>
+                    <a href="#"><i class='bx bxs-key' ></i> Change Password</a>
+                    <a href="#" onclick="logout()"><i class='bx bx-log-out-circle' ></i> Logout</a>
                 </div>
             </div>
-
-            <script>
-                function toggleDropdown() {
-                    var profileDropdown = document.querySelector('.user-profile');
-                    profileDropdown.classList.toggle('active');
-                }
-
-                function logout() {
-                    // Proses logout, misalnya redirect ke halaman logout atau hapus session
-                    alert("Tombol logout ditekan");
-                }
-
-                // Tutup dropdown saat klik di luar dropdown
-                window.onclick = function (event) {
-                    if (!event.target.matches('.user-profile') && !event.target.closest('.user-profile')) {
-                        var dropdowns = document.getElementsByClassName("dropdown-content");
-                        for (var i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.classList.contains('active')) {
-                                openDropdown.classList.remove('active');
-                            }
-                        }
-                    }
-                }
-            </script>
-
 
             <button class="nav-toggle-btn" aria-label="Toggle menu" data-nav-toggler>
                 <i aria-hidden="true" class="menu-icon bx bx-grid-alt"></i>
